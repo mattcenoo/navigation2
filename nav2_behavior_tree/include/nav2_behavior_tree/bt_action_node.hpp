@@ -62,7 +62,8 @@ public:
   {
   }
 
-  // Any BT node that accepts parameters must provide a providedPorts method
+  // Any subclass of BtActionNode that accepts parameters must provide a providedPorts method
+  // and call providedBasicPorts in it.
   static BT::PortsList providedBasicPorts(BT::PortsList addition)
   {
     BT::PortsList basic = {

@@ -60,7 +60,8 @@ public:
   {
   }
 
-  // Any BT node that accepts parameters must provide a providedPorts method
+  // Any subclass of BtServiceNode that accepts parameters must provide a providedPorts method
+  // and call providedBasicPorts in it.
   static BT::PortsList providedBasicPorts(BT::PortsList addition)
   {
     BT::PortsList basic = {
@@ -70,6 +71,11 @@ public:
     basic.insert(addition.begin(), addition.end());
 
     return basic;
+  }
+
+  static BT::PortsList providedPorts()
+  {
+    return providedBasicPorts({});
   }
 
   // The main override required by a BT service
