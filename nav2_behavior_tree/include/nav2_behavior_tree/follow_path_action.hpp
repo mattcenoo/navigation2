@@ -54,11 +54,11 @@ public:
     }
   }
 
-  static BT::PortsList providedAdditionalPorts()
+  static BT::PortsList providedPorts()
   {
-    return {
+    return providedBasicPorts({
       BT::InputPort<nav_msgs::msg::Path>("path", "Path to follow"),
-    };
+    });
   }
 };
 

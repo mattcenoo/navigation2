@@ -51,12 +51,12 @@ public:
     }
   }
 
-  static BT::PortsList providedAdditionalPorts()
+  static BT::PortsList providedPorts()
   {
-    return {
+    return providedBasicPorts({
       BT::OutputPort<nav_msgs::msg::Path>("path", "Path created by ComputePathToPose node"),
       BT::InputPort<geometry_msgs::msg::PoseStamped>("goal", "Destination to plan to")
-    };
+    });
   }
 
 private:
