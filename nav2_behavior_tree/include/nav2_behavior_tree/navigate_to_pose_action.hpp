@@ -56,7 +56,7 @@ public:
   }
 
   // Any BT node that accepts parameters must provide a requiredNodeParameters method
-  static BT::PortsList providedPorts()
+  static BT::PortsList providedAdditionalPorts()
   {
     return {
       BT::InputPort<geometry_msgs::msg::Point>("position", "0;0;0", "Position"),

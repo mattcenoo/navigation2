@@ -51,7 +51,7 @@ public:
     }
   }
 
-  static BT::PortsList providedPorts()
+  static BT::PortsList providedAdditionalPorts()
   {
     return {
       BT::OutputPort<nav_msgs::msg::Path>("path", "Path created by ComputePathToPose node"),

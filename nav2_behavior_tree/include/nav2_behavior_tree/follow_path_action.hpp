@@ -54,7 +54,7 @@ public:
     }
   }
 
-  static BT::PortsList providedPorts()
+  static BT::PortsList providedAdditionalPorts()
   {
     return {
       BT::InputPort<nav_msgs::msg::Path>("path", "Path to follow"),

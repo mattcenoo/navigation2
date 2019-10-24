@@ -60,13 +60,24 @@ public:
   {
   }
 
-  // Any BT node that accepts parameters must provide a requiredNodeParameters method
+  // Any BT node that accepts parameters must provide a providedPorts method
   static BT::PortsList providedPorts()
   {
-    return {
+    BT::PortsList basic = {
       BT::InputPort<std::string>("service_name", "please_set_service_name_in_BT_Node"),
       BT::InputPort<std::chrono::milliseconds>("server_timeout")
     };
+    BT::PortsList addition = providedAdditionalPorts();
+    basic.insert(addition.begin(), addition.end());
+
+    return basic;
+  }
+
+  // Any subclass of BtServiceNode that accepts parameters
+  // must provide a providedAdditionalPorts method
+  static BT::PortsList providedAdditionalPorts()
+  {
+    return {};
   }
 
   // The main override required by a BT service

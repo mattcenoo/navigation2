@@ -45,7 +45,7 @@ public:
   }
 
   // Any BT node that accepts parameters must provide a requiredNodeParameters method
-  static BT::PortsList providedPorts()
+  static BT::PortsList providedAdditionalPorts()
   {
     return {
       BT::InputPort<int>("wait_duration", 1, "Wait time")

@@ -50,7 +50,7 @@ public:
     goal_.speed = speed;
   }
 
-  static BT::PortsList providedPorts()
+  static BT::PortsList providedAdditionalPorts()
   {
     return {
       BT::InputPort<double>("backup_dist", -0.15, "Distance to backup"),
